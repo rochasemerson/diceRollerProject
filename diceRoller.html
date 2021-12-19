@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dice Roller</title>
+    <link rel="stylesheet" href="diceRoller.css">
+    <script src="./js/diceRoller.js" defer></script>
+    <script src="./js/jquery.js"></script>
+</head>
+<body>
+    <div class="dice-container">
+        <button>
+            <img src="./icons/d4.svg" alt="D4" diceValue="4">
+        </button>
+        <button>
+            <img src="./icons/d6.svg" alt="D6" diceValue="6">
+        </button>
+        <button>
+            <img src="./icons/d8.svg" alt="D8" diceValue="8">
+        </button>
+        <button>
+            <img src="./icons/d10.svg" alt="D10" diceValue="10">
+        </button>
+        <button>
+            <img src="./icons/d12.svg" alt="D12" diceValue="12">
+        </button>
+        <button>
+            <img src="./icons/d20.svg" alt="D20" diceValue="20">
+        </button>
+    </div>
+    <div class="container-2">
+        <div class="form-container">
+            <select>
+                <option>d4</option>
+                <option>d6</option>
+                <option>d8</option>
+                <option>d10</option>
+                <option>d12</option>                    
+                <option>d20</option>                                      
+            </select>
+            <input type="number" min="2" max="50" placeholder="Digite a quantidade">
+        </div>
+        <button type="submit">
+            <img src="./icons/diceset.svg" alt="Roll">
+        </button>
+        <button class="lucky-roll" data-tooltip="Rola duas vezes e seleciona o maior valor!">
+            <img src="./icons/luck.svg" alt="Lucky">
+        </button>
+        <button class="clean" data-tooltip="Limpa todos os valores!">
+            <img src="./icons/broom.svg" alt="clear">
+        </button>
+    </div>
+    <div class="container-3">
+        <div class="result">
+            <div class="inner"></div>
+        </div>
+        <div class="percentage-btn"></div>
+        <div class="gifs">
+            <div class="inner">
+                <img class="failure-gif" src="./img/failure.gif" alt="pqp">
+                <img class="sucess-gif" src="./img/sucess.gif" alt="sucess">
+                <img class="d20-gif" src="./img/d20.gif" alt="D20">      
+            </div>
+        </div>
+    </div>
+    <div class="history">
+        <ol class="list">
+
+        </ol>
+        <div class="total"></div>
+    </div>
+</body>
+</html>
