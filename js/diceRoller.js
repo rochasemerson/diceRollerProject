@@ -7,12 +7,6 @@ const percentageBtn = $(".percentage-btn")
 let acumulator = 0
 let multiRollCounter = 0
 
-console.log(input[0])
-
-$(function loadPercentageBtn() { // Carrega o botão de porcentagem. Original: https://codepen.io/junebug12851/pen/mJZNqN
-    percentageBtn.load("percentageBtn.html");
-})
-
 function clean() { // Função de limpeza. Não funciona no botao %
     $(result).empty()
     $(list).empty()
@@ -108,3 +102,54 @@ $('button[type=submit]').click(e => { // Event listener da função de multi-rol
     multiRoll(diceValue, diceRoll)
     console.log(diceValue, input[0].value)
 })
+
+let colorInc = 100 / 3;
+
+$(function()
+{
+  $("#percent-box").click(function()
+  {
+    $(this).select();
+  });
+  
+  $(".green").click(function()
+  {
+    let val = Math.floor(Math.random() * 100 + 1)
+    
+    if(val != ""
+      && !isNaN(val)
+      && val <= 100
+      && val >= 0)
+    {
+      console.log(val);
+      
+      let valOrig = val;
+      val = 100 - val;
+      
+      if(valOrig == 0)
+      {
+        $("#percent-box").val(0);
+        $(".progress .percent").text(0 + "%");
+      }
+      else $(".progress .percent").text(valOrig + "%");
+      
+      $(".progress").parent().removeClass();
+      $(".progress .water").css("top", val + "%");
+      
+      if(valOrig < colorInc * 1)
+        $(".progress").parent().addClass("red");
+      else if(valOrig < colorInc * 2)
+        $(".progress").parent().addClass("orange");
+      else
+        $(".progress").parent().addClass("green");
+    }
+    else
+    {
+      $(".progress").parent().removeClass();
+      $(".progress").parent().addClass("green");
+      $(".progress .water").css("top", 100 - 67 + "%");
+      $(".progress .percent").text(67 + "%");
+      $("#percent-box").val("");
+    }
+  });
+});

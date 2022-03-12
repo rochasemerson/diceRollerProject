@@ -1,4 +1,5 @@
 /* Icons taken from: https://freesvg.org/ */
+/* Original percentage button: https://codepen.io/junebug12851/pen/mJZNqN */
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 
@@ -54,16 +55,13 @@ body {
 
 .list {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: flex-start;
-    margin: 10px;
+    gap: 0.75rem;
 }
 
 li {
     font-family: var(--font-family);
     font-size: 1.5rem;
-    margin-right: 3rem;
     color: f9dd94;
     border-bottom: 2px double black;
 }
@@ -86,24 +84,23 @@ ol li:before {
 }
 
 .result {
-    height: 200px;
-    width: 200px;
+    height: 10rem;
+    min-width: 10rem;
     font-family: var(--font-family);
     font-size: 3.5rem;
-    line-height: 190px;
+    line-height: 9.5rem;
     text-align: center;
     color: #03c603;
     border: 5px solid #53fc53;
     border-radius: 50%;
     box-shadow: 0 0 20px #029502;
+    margin-top: 0.5rem;
 }
 
 .inner {
     position: relative;
-    height: 190px;
-    width: 190px;
-    border: 5px solid #1a1a1a;
-    border-radius: 50%;
+    height: 9.5rem;
+    width: 9.5rem;
 }
 
 .inner img {
@@ -115,8 +112,8 @@ ol li:before {
 
 .gifs {
     position: relative;
-    height: 200px;
-    width: 200px;
+    height: 10rem;
+    width: 10rem;
     border: 5px solid #53fc53;
     border-radius: 50%;
     box-shadow: 0 0 20px #029502;
@@ -133,8 +130,8 @@ ol li:before {
 }
 
 button {
-    height: 100px;
-    width: 100px;
+    height: 5rem;
+    width: 5rem;
     max-height: 15%;
     max-width: 15%;
     margin: 20px;
@@ -150,7 +147,8 @@ select {
     height: 25%;
     width: 100%;
     box-shadow: var(--box-shadow);
-    margin-bottom: 10px;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
 }
 
 input {
@@ -159,7 +157,8 @@ input {
     height: 25%;
     width: 100%;
     box-shadow: var(--box-shadow);
-    margin-top: 10px;
+    margin-top: 0.5rem;
+    margin-left: 0.75rem;
 }
 
 h4 {
@@ -179,15 +178,16 @@ h2 {
 }
 
 .history {
-    display: flex;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
 }
 
 .total {
-    height: 5vh;
-    padding: 5px;
-    margin: 5px;
+    grid-column: span 4;
+    text-align: center;
     font-family: var(--font-family);
-    font-size: 2.5rem;
+    font-size: 5rem;
     text-decoration: underline;
     /* animation: textAnimation 3s linear infinite; */
 }
@@ -221,4 +221,242 @@ h2 {
 .lucky-roll:hover::before,
 .clean:hover::before {
     --scale: 1;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+:-moz-placeholder {
+  color: #7aa6f3;
+  text-shadow: 0 0 3px #7aa6f3;
+}
+::-moz-placeholder {
+  color: #7aa6f3;
+  text-shadow: 0 0 3px #7aa6f3;
+}
+.wrapper {
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -o-box-align: center;
+  align-items: center;
+  -o-box-pack: center;
+  justify-content: center;
+  -o-box-orient: vertical;
+  flex-direction: row;
+  height: 100%;
+  cursor: pointer;
+}
+.green .progress,
+.red .progress,
+.orange .progress {
+  position: relative;
+  border-radius: 50%;
+}
+.green .progress,
+.red .progress,
+.orange .progress {
+  width: 10rem;
+  height: 10rem;
+}
+.green .progress {
+  border: 5px solid #53fc53;
+}
+.green .progress {
+  box-shadow: 0 0 20px #029502;
+}
+.green .progress,
+.red .progress,
+.orange .progress {
+  transition: all 1s ease;
+}
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+  position: absolute;
+  overflow: hidden;
+  z-index: 2;
+  border-radius: 50%;
+}
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+  width: 9.5rem;
+  height: 9.5rem;
+}
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+  border: 5px solid #1a1a1a;
+}
+.green .progress .inner,
+.red .progress .inner,
+.orange .progress .inner {
+  transition: all 1s ease;
+}
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+  position: absolute;
+  z-index: 1;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  border-radius: 40%;
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  animation-timing-function: linear;
+  -webkit-animation-name: spin;
+  animation-name: spin;
+}
+.green .progress .inner .water {
+  top: 25%;
+}
+.green .progress .inner .water {
+  background: rgba(83,252,83,0.5);
+}
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+  transition: all 1s ease;
+}
+.green .progress .inner .water,
+.red .progress .inner .water,
+.orange .progress .inner .water {
+  -webkit-animation-duration: 10s;
+  animation-duration: 10s;
+}
+.green .progress .inner .water {
+  box-shadow: 0 0 20px #03bc03;
+}
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+  position: absolute;
+  top: -120%;
+  left: -120%;
+  z-index: 5;
+  width: 200%;
+  height: 200%;
+  transform: rotate(45deg);
+  border-radius: 50%;
+}
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+  background-color: rgba(255,255,255,0.15);
+}
+.green .progress .inner .glare,
+.red .progress .inner .glare,
+.orange .progress .inner .glare {
+  transition: all 1s ease;
+}
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-weight: bold;
+  text-align: center;
+}
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+  line-height: 9.5rem;
+  font-size: 52.3076923076923px;
+}
+.green .progress .inner .percent {
+  color: #03c603;
+}
+.green .progress .inner .percent {
+  text-shadow: 0 0 10px #029502;
+}
+.green .progress .inner .percent,
+.red .progress .inner .percent,
+.orange .progress .inner .percent {
+  transition: all 1s ease;
+}
+.red {
+  margin-top: 15px;
+}
+.red .progress {
+  border: 5px solid #ed3b3b;
+}
+.red .progress {
+  box-shadow: 0 0 20px #7a0b0b;
+}
+.red .progress .inner .water {
+  top: 75%;
+}
+.red .progress .inner .water {
+  background: rgba(237,59,59,0.5);
+}
+.red .progress .inner .water {
+  box-shadow: 0 0 20px #9b0e0e;
+}
+.red .progress .inner .percent {
+  color: #a30f0f;
+}
+.red .progress .inner .percent {
+  text-shadow: 0 0 10px #7a0b0b;
+}
+.orange {
+  margin-top: 15px;
+}
+.orange .progress {
+  border: 5px solid #f07c3e;
+}
+.orange .progress {
+  box-shadow: 0 0 20px #7e320a;
+}
+.orange .progress .inner .water {
+  top: 50%;
+}
+.orange .progress .inner .water {
+  background: rgba(240,124,62,0.5);
+}
+.orange .progress .inner .water {
+  box-shadow: 0 0 20px #a0400c;
+}
+.orange .progress .inner .percent {
+  color: #a8430d;
+}
+.orange .progress .inner .percent {
+  text-shadow: 0 0 10px #7e320a;
+}
+
+@-webkit-keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (width < 400px) {
+       .container-3 {
+        transform: translateY(-20%) scale(0.6);
+        gap: 1rem;
+        border: none;
+    }
+
+    .history {
+        transform: translateY(-15%)
+    }
+
+    .history > ol {
+        transform: translateY(-15%)
+    }
 }
